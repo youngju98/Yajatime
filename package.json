@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "go": "react-native start --config=rn-cli.config.js --resetCache"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",

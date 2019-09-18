@@ -7,9 +7,13 @@ target 'Yajatime' do
   
   node_modules_path = '../node_modules'
 
-  pod 'yoga', path: "#{node_modules_path}/react-native/ReactCommon/yoga/yoga.podspec"
   pod 'React', path: "#{node_modules_path}/react-native"
 
+  pod 'yoga', path: "#{node_modules_path}/react-native/ReactCommon/yoga/yoga.podspec"
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
+  
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
   # Pods for Yajatime
@@ -29,10 +33,10 @@ target 'Yajatime' do
 
 end
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    if target.name == "React"
-      target.remove_from_project
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        if target.name == "React"
+            target.remove_from_project
+        end
     end
-  end
 end

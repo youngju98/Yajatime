@@ -57,3 +57,6 @@ buck-out/
 
 # fire base
 */android/app/google-services.json
+
+#pods
+*/ios/Pods
