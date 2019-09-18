@@ -5,7 +5,6 @@ module.exports = {
         blacklistRE: blacklist([
             /node_modules\/.*\/node_modules\/react-native\/.*/,
             /nodejs-assets\/.*/,
-            /#current-cloud-backend\/.*/,
             /ios\/Pods\/.*/
         ])
     },
